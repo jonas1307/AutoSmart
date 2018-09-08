@@ -24,7 +24,7 @@ namespace AutoSmart.Presentation.Mvc.Controllers
             return View(Mapper.Map<IEnumerable<Cliente>, IEnumerable<ClienteViewModel>>(clientes));
         }
 
-        public ActionResult Criar()
+        public ActionResult Cadastrar()
         {
             return View("FormCliente", new ClienteViewModel());
         }
