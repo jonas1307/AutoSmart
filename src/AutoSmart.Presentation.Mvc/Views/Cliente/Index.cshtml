@@ -5,20 +5,31 @@
     Layout = "/Views/Shared/_Layout.cshtml";
 }
 
-@Html.Action("Create", "Cliente", new { @class = "btn btn-lg" })
+@Html.ActionLink("Novo", "Criar", null, new { @class = "btn-lg btn-primary" })
+<br />
+<br />
 
-<table>
+<table class="table table-hover">
     <thead>
         <tr>
             <th>Nome</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            @foreach (var cliente in Model)
+        @if (Model.Any())
+        {
+            foreach (var cliente in Model)
             {
-                <td>@cliente.Nome</td>
+                <tr>
+                    <td>@cliente.Nome</td>
+                </tr>
             }
-        </tr>
+        }
+        else
+        {
+            <tr>
+                <td>Não há informações para exibir.</td>
+            </tr>
+        }
     </tbody>
 </table>
