@@ -34,11 +34,16 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppService\AppServiceBase.cs" />
+    <Compile Include="Interfaces\IAppServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="AppService\" />
-    <Folder Include="Interfaces\" />
+    <ProjectReference Include="..\AutoSmart.Domain\AutoSmart.Domain.csproj">
+      <Project>{DA086E89-A60A-479F-8612-B70912AAFFF0}</Project>
+      <Name>AutoSmart.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
