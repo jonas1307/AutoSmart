@@ -5,14 +5,18 @@
     Layout = "/Views/Shared/_Layout.cshtml";
 }
 
-@Html.ActionLink("Novo", "Cadastrar", null, new { @class = "btn-lg btn-primary" })
+<h1>Lista de Clientes</h1>
 <br />
+<div>
+    @Html.ActionLink("Novo", "Cadastrar", null, new { @class = "btn-lg btn-primary" })
+</div>
 <br />
-
 <table class="table table-hover">
     <thead>
         <tr>
             <th>Nome</th>
+            <th>CPF/CNPJ</th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -22,13 +26,15 @@
             {
                 <tr>
                     <td>@cliente.Nome</td>
+                    <td>@cliente.CpfCnpj</td>
+                    <td><a class="btn-sm btn-primary" href="@Url.Action("Editar", new {id = cliente.Id})">Editar</a> </td>
                 </tr>
             }
         }
         else
         {
             <tr>
-                <td>Não há informações para exibir.</td>
+                <td colspan="3">Não há informações para exibir.</td>
             </tr>
         }
     </tbody>
