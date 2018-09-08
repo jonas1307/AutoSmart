@@ -42,12 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\AutoSmartContext.cs" />
+    <Compile Include="EntityConfig\ClienteConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ClienteRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="EntityConfig\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\AutoSmart.Domain\AutoSmart.Domain.csproj">
       <Project>{DA086E89-A60A-479F-8612-B70912AAFFF0}</Project>

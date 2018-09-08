@@ -2,6 +2,8 @@
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
+using AutoSmart.Domain.Entities;
+using AutoSmart.Infrastructure.Data.EntityConfig;
 
 namespace AutoSmart.Infrastructure.Data.Context
 {
@@ -16,6 +18,9 @@ namespace AutoSmart.Infrastructure.Data.Context
         #endregion
 
         #region Properties
+
+        public DbSet<Cliente> Clientes { get; set; }
+
         #endregion
 
         #region Methods
@@ -31,30 +36,33 @@ namespace AutoSmart.Infrastructure.Data.Context
             modelBuilder.Properties<string>().Configure(p => p.HasColumnType("VARCHAR"));
             modelBuilder.Properties<string>().Configure(p => p.HasMaxLength(255));
 
+            // entity configurations
+            modelBuilder.Configurations.Add(new ClienteConfig());
+
             base.OnModelCreating(modelBuilder);
         }
 
         public override int SaveChanges()
         {
-            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
+            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCriacao") != null))
             {
                 switch (entry.State)
                 {
                     case EntityState.Added:
-                        entry.Property("DataCadastro").CurrentValue = DateTime.Now;
+                        entry.Property("DataCriacao").CurrentValue = DateTime.Now;
                         break;
                     case EntityState.Modified:
-                        entry.Property("DataCadastro").IsModified = false;
+                        entry.Property("DataCriacao").IsModified = false;
                         break;
                 }
             }
 
-            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataModificacao") != null))
+            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataAlteracao") != null))
             {
                 if (entry.State == EntityState.Modified)
                 {
-                    entry.Property("DataModificacao").IsModified = true;
-                    entry.Property("DataModificacao").CurrentValue = DateTime.Now;
+                    entry.Property("DataAlteracao").IsModified = true;
+                    entry.Property("DataAlteracao").CurrentValue = DateTime.Now;
                 }
             }
 

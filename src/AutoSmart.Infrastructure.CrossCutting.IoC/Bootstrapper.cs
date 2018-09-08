@@ -14,12 +14,15 @@ namespace AutoSmart.Infrastructure.CrossCutting.IoC
         {
             // App Services
             container.Register(typeof(IAppServiceBase<>), typeof(AppServiceBase<>), Lifestyle.Scoped);
+            container.Register<IClienteAppService, ClienteAppService>(Lifestyle.Scoped);
 
             // Services
             container.Register(typeof(IServiceBase<>), typeof(ServiceBase<>), Lifestyle.Scoped);
+            container.Register<IClienteService, ClienteService>();
 
             // Repositories
             container.Register(typeof(IRepositoryBase<>), typeof(RepositoryBase<>), Lifestyle.Scoped);
+            container.Register<IClienteRepository, ClienteRepository>();
         }
     }
 }
