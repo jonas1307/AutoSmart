@@ -5,9 +5,9 @@ namespace AutoSmart.Application.AutoMapper
 {
     public class AutoMapperConfig
     {
-        public static MapperConfiguration RegisterMappings()
+        public static void RegisterMappings()
         {
-            return new MapperConfiguration(cfg =>
+            Mapper.Initialize(cfg =>
             {
                 cfg.AddProfile(new DomainToViewModelMappingProfile());
                 cfg.AddProfile(new ViewModelToDomainMappingProfile());

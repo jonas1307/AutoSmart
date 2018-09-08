@@ -2,7 +2,6 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using AutoSmart.Application.AutoMapper;
 
 namespace AutoSmart.Presentation.Mvc
 {
@@ -14,7 +13,6 @@ namespace AutoSmart.Presentation.Mvc
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            AutoMapperConfig.RegisterMappings();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using AutoSmart.Presentation.Mvc;
+﻿using AutoSmart.Application.AutoMapper;
+using AutoSmart.Presentation.Mvc;
 using Microsoft.Owin;
 using Owin;
 
@@ -10,6 +11,8 @@ namespace AutoSmart.Presentation.Mvc
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+
+            AutoMapperConfig.RegisterMappings();
         }
     }
 }
