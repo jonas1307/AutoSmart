@@ -20,7 +20,8 @@ namespace AutoSmart.Infrastructure.Data.EntityConfig
             Property(p => p.CpfCnpj)
                 .IsRequired();
 
-            Property(p => p.TelefoneContato);
+            Property(p => p.TelefoneContato)
+                .HasMaxLength(15);
 
             Property(p => p.Email);
 
