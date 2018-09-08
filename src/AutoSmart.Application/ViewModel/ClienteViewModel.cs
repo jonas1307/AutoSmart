@@ -28,7 +28,7 @@ namespace AutoSmart.Application.ViewModel
         public string CpfCnpj { get; set; }
 
         [Display(Name = "Telefone:")]
-        [MaxLength(14, ErrorMessage = "É permitido até {1} caracteres.")]
+        [MaxLength(15, ErrorMessage = "É permitido até {1} caracteres.")]
         public string TelefoneContato { get; set; }
 
         [Display(Name = "E-mail:")]
