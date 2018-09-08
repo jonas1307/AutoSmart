@@ -1,0 +1,37 @@
+﻿@model AutoSmart.Application.ViewModel.ClienteViewModel
+
+@{
+    ViewBag.Title = $"{(Model.Id == 0 ? "Cadastro" : "Alteração")} de Cliente";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Salvar", "Cliente", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.DataCriacao)
+
+    <div class="form-control">
+        @Html.LabelFor(m => m.Nome)
+        @Html.TextBoxFor(m => m.Nome)
+        @Html.ValidationMessageFor(m => m.Nome)
+    </div>
+
+    <div class="form-control">
+        @Html.LabelFor(m => m.CpfCnpj)
+        @Html.TextBoxFor(m => m.CpfCnpj)
+        @Html.ValidationMessageFor(m => m.CpfCnpj)
+    </div>
+
+    <div class="form-control">
+        @Html.LabelFor(m => m.TelefoneContato)
+        @Html.TextBoxFor(m => m.TelefoneContato)
+        @Html.ValidationMessageFor(m => m.TelefoneContato)
+    </div>
+
+    <div class="form-control">
+        <button class="btn btn-success" type="submit">Salvar</button>
+        <a href="@Url.Action("Index", "Cliente")" class="btn btn-danger">Voltar</a>
+    </div>
+}
