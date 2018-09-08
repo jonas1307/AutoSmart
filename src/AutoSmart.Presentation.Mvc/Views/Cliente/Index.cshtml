@@ -1,0 +1,24 @@
+﻿@model IEnumerable<AutoSmart.Application.ViewModel.ClienteViewModel>
+
+@{
+    ViewBag.Title = "Clientes";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Action("Create", "Cliente", new { @class = "btn btn-lg" })
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (var cliente in Model)
+            {
+                <td>@cliente.Nome</td>
+            }
+        </tr>
+    </tbody>
+</table>
