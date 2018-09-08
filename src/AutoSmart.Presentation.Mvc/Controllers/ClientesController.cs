@@ -8,11 +8,11 @@ using AutoSmart.Domain.Entities;
 
 namespace AutoSmart.Presentation.Mvc.Controllers
 {
-    public class ClienteController : Controller
+    public class ClientesController : Controller
     {
         private readonly IClienteAppService _clienteAppService;
 
-        public ClienteController(IClienteAppService clienteAppService)
+        public ClientesController(IClienteAppService clienteAppService)
         {
             _clienteAppService = clienteAppService;
         }

@@ -5,7 +5,7 @@
     Layout = "../Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm("Salvar", "Cliente", FormMethod.Post))
+@using (Html.BeginForm("Salvar", "Clientes", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
@@ -45,6 +45,6 @@
 
     <div class="form-control">
         <button class="btn btn-success" type="submit">Salvar</button>
-        <a href="@Url.Action("Index", "Cliente")" class="btn btn-danger">Voltar</a>
+        <a href="@Url.Action("Index", "Clientes")" class="btn btn-danger">Voltar</a>
     </div>
 }
