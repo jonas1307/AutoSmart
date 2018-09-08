@@ -16,34 +16,34 @@
         @Html.HiddenFor(m => m.DataCriacao)
     }
 
-    <div class="form-control">
+    <div class="form-group">
         @Html.LabelFor(m => m.Nome)
-        @Html.TextBoxFor(m => m.Nome)
+        @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Nome)
     </div>
 
-    <div class="form-control">
+    <div class="form-group">
         @Html.LabelFor(m => m.CpfCnpj)
-        @Html.TextBoxFor(m => m.CpfCnpj)
+        @Html.TextBoxFor(m => m.CpfCnpj, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.CpfCnpj)
     </div>
 
-    <div class="form-control">
+    <div class="form-group">
         @Html.LabelFor(m => m.TelefoneContato)
-        @Html.TextBoxFor(m => m.TelefoneContato)
+        @Html.TextBoxFor(m => m.TelefoneContato, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.TelefoneContato)
     </div>
 
     if (Model.Id != 0)
     {
-        <div class="form-control">
+        <div class="form-group">
             @Html.LabelFor(m => m.DataCriacao)
-            @Html.TextBoxFor(m => m.DataCriacao, new { disabled = "disabled" })
+            @Html.TextBoxFor(m => m.DataCriacao, new { disabled = "disabled", @class = "form-control" })
             @Html.ValidationMessageFor(m => m.DataCriacao)
         </div>
     }
 
-    <div class="form-control">
+    <div class="form-group">
         <button class="btn btn-success" type="submit">Salvar</button>
         <a href="@Url.Action("Index", "Clientes")" class="btn btn-danger">Voltar</a>
     </div>
