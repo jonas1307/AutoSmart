@@ -18,11 +18,11 @@ namespace AutoSmart.Infrastructure.CrossCutting.IoC
 
             // Services
             container.Register(typeof(IServiceBase<>), typeof(ServiceBase<>), Lifestyle.Scoped);
-            container.Register<IClienteService, ClienteService>();
+            container.Register<IClienteService, ClienteService>(Lifestyle.Scoped);
 
             // Repositories
             container.Register(typeof(IRepositoryBase<>), typeof(RepositoryBase<>), Lifestyle.Scoped);
-            container.Register<IClienteRepository, ClienteRepository>();
+            container.Register<IClienteRepository, ClienteRepository>(Lifestyle.Scoped);
         }
     }
 }
