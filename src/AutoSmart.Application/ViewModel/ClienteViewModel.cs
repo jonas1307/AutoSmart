@@ -15,9 +15,9 @@ namespace AutoSmart.Application.ViewModel
         [Key]
         public long Id { get; set; }
 
-        [MinLength(3)]
-        [MaxLength(255)]
         [Display(Name = "Nome:")]
+        [MinLength(3, ErrorMessage = "Digite ao menos {1} caracteres.")]
+        [MaxLength(255, ErrorMessage = "É permitido até {1} caracteres.")]
         [Required(ErrorMessage = "O campo é obrigatório.")]
         public string Nome { get; set; }
 
@@ -27,8 +27,8 @@ namespace AutoSmart.Application.ViewModel
         [Required(ErrorMessage = "O campo é obrigatório.")]
         public string CpfCnpj { get; set; }
 
-        [MaxLength(14)]
         [Display(Name = "Telefone:")]
+        [MaxLength(14, ErrorMessage = "É permitido até {1} caracteres.")]
         public string TelefoneContato { get; set; }
 
         [DataType(DataType.Date)]
