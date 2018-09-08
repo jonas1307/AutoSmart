@@ -10,7 +10,11 @@
     @Html.AntiForgeryToken()
 
     @Html.HiddenFor(m => m.Id)
-    @Html.HiddenFor(m => m.DataCriacao)
+
+    if (Model.Id == 0)
+    {
+        @Html.HiddenFor(m => m.DataCriacao)
+    }
 
     <div class="form-control">
         @Html.LabelFor(m => m.Nome)
@@ -29,6 +33,15 @@
         @Html.TextBoxFor(m => m.TelefoneContato)
         @Html.ValidationMessageFor(m => m.TelefoneContato)
     </div>
+
+    if (Model.Id != 0)
+    {
+        <div class="form-control">
+            @Html.LabelFor(m => m.DataCriacao)
+            @Html.TextBoxFor(m => m.DataCriacao, new { disabled = "disabled" })
+            @Html.ValidationMessageFor(m => m.DataCriacao)
+        </div>
+    }
 
     <div class="form-control">
         <button class="btn btn-success" type="submit">Salvar</button>
