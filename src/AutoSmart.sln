@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSmart.Infrastructure.Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSmart.Infrastructure.CrossCutting.IoC", "AutoSmart.Infrastructure.CrossCutting.IoC\AutoSmart.Infrastructure.CrossCutting.IoC.csproj", "{46E7F6E7-0733-4B26-A974-6C2BD82FFCA8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSmart.Presentation.Mvc", "AutoSmart.Presentation.Mvc\AutoSmart.Presentation.Mvc.csproj", "{889398E2-5EDD-4DCD-901B-A57D54FFB2DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{46E7F6E7-0733-4B26-A974-6C2BD82FFCA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46E7F6E7-0733-4B26-A974-6C2BD82FFCA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46E7F6E7-0733-4B26-A974-6C2BD82FFCA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{889398E2-5EDD-4DCD-901B-A57D54FFB2DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{889398E2-5EDD-4DCD-901B-A57D54FFB2DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{889398E2-5EDD-4DCD-901B-A57D54FFB2DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{889398E2-5EDD-4DCD-901B-A57D54FFB2DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
