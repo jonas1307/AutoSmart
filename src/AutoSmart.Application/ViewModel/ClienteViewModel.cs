@@ -31,6 +31,11 @@ namespace AutoSmart.Application.ViewModel
         [MaxLength(14, ErrorMessage = "É permitido até {1} caracteres.")]
         public string TelefoneContato { get; set; }
 
+        [Display(Name = "E-mail:")]
+        [EmailAddress(ErrorMessage = "E-mail inválido.")]
+        [MaxLength(255, ErrorMessage = "É permitido até {1} caracteres.")]
+        public string Email { get; set; }
+
         [DataType(DataType.Date)]
         [Display(Name = "Data de Criação:")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy HH:mm:ss}")]

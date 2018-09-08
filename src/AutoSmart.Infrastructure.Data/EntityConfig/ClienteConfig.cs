@@ -22,6 +22,8 @@ namespace AutoSmart.Infrastructure.Data.EntityConfig
 
             Property(p => p.TelefoneContato);
 
+            Property(p => p.Email);
+
             Property(p => p.DataCriacao)
                 .IsRequired();
 

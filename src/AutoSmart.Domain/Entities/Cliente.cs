@@ -11,5 +11,7 @@ namespace AutoSmart.Domain.Entities
         public string CpfCnpj { get; set; }
 
         public string TelefoneContato { get; set; }
+
+        public string Email { get; set; }
     }
 }
